@@ -1,0 +1,15 @@
+[Unit]
+Description=Copyparty Pod Service
+After=network.target
+Wants=network.target
+
+[Service]
+User=app
+Group=app
+Type=simple
+WorkingDirectory=/var/www/copyparty-pod
+ExecStart=/usr/bin/sh /var/www/copyparty-pod/service.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
